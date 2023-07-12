@@ -1,8 +1,8 @@
 {
   "kind": "Workflow",
-  "id": "15578dd9f85df48dce9f5e80bb8e2564",
+  "id": "9ae435a534f94192d77959dc13171a09",
   "isDeleted": false,
-  "rev": "150-a54c83aa296ff1fcaccb1a39ca0b0dbd",
+  "rev": "16-fe7cb3a750d0809fb5d71eb92b8d79c5",
   "description": "Tercen template workflow for the analysis of dose response data using a 4-parameter log-logistic non linear model.",
   "name": "Dose response curves",
   "createdBy": "makostadima",
@@ -13,14 +13,14 @@
   },
   "createdDate": {
     "kind": "Date",
-    "value": "2023-06-26T10:02:48.242843Z"
+    "value": "2023-07-12T11:00:20.011966Z"
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2023-07-11T14:16:31.993863Z"
+    "value": "2023-07-12T12:44:55.369698Z"
   },
-  "urls": [],
-  "tags": [],
+  "urls": ["https://github.com/tercen/iteos_dose_response_curves_template"],
+  "tags": ["linear model", "regression", "dose response curve", "iteos"],
   "meta": [
     {
       "kind": "Pair",
@@ -35,7 +35,7 @@
   "version": "",
   "authors": [],
   "isPublic": false,
-  "projectId": "15578dd9f85df48dce9f5e80bb8e4be3",
+  "projectId": "9ae435a534f94192d77959dc131497f5",
   "folderId": "",
   "links": [
     {
@@ -174,7 +174,7 @@
         "kind": "TableStepModel",
         "relation": {
           "kind": "UnionRelation",
-          "id": "b2e7d60b-6fd1-4e82-b575-8527041bdda7",
+          "id": "fef23ec6-ca54-421a-9b62-9abc50688e88",
           "relations": []
         }
       }
@@ -217,7 +217,7 @@
         "kind": "TableStepModel",
         "relation": {
           "kind": "UnionRelation",
-          "id": "ff1a0024-af38-4389-bd4f-c6ebcb13085b",
+          "id": "2bd20019-c53d-4a3a-9e8b-b32cbdc2129f",
           "relations": []
         }
       }
@@ -371,7 +371,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -480,7 +481,7 @@
             "kind": "OperatorRef",
             "name": "Log",
             "version": "1.1.3",
-            "operatorId": "8f48cb42f676f560e1557b0020608507",
+            "operatorId": "919067381364235ef1ee290837635988",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -525,7 +526,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -561,8 +565,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "e9d42136-c8f9-4560-96f5-afa62bb05b7a"
-      }
+        "id": "1315a0cc-b513-4947-a221-9f4a8d51262e"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -713,7 +718,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -759,7 +765,7 @@
             "kind": "OperatorRef",
             "name": "Non Linear Regression",
             "version": "1.4.1",
-            "operatorId": "8f48cb42f676f560e1557b0020609825",
+            "operatorId": "9ae435a534f94192d77959dc1316526c",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -824,7 +830,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -923,8 +932,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "50d4de90-2e78-4d37-a527-d01e7f22b6d4"
-      }
+        "id": "958adb71-2994-46b3-bc81-7759d2b18434"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "MeltStep",
@@ -993,6 +1003,11 @@
           {
             "kind": "Factor",
             "name": "count lymphocytes",
+            "type": "double"
+          },
+          {
+            "kind": "Factor",
+            "name": "y",
             "type": "double"
           }
         ],
@@ -1151,7 +1166,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -1260,7 +1276,7 @@
             "kind": "OperatorRef",
             "name": "Multiply by Constant",
             "version": "0.1.1",
-            "operatorId": "8f48cb42f676f560e1557b002060b686",
+            "operatorId": "9ae435a534f94192d77959dc1316e3da",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -1300,7 +1316,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -1336,8 +1355,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "ef7009e8-5caf-44c1-bb03-fde6c2c1d9f6"
-      }
+        "id": "f0b9c170-d948-4dc0-9266-419e28072355"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -1488,7 +1508,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -1568,7 +1589,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -1856,8 +1880,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "f184be55-d815-47cd-b9c0-58100d0c7934"
-      }
+        "id": "440f6e0b-a50f-4773-831e-314c07e733b2"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "ExportStep",
@@ -1954,7 +1979,7 @@
           },
           {
             "kind": "Factor",
-            "name": "Plate",
+            "name": "plate ID",
             "type": "string"
           },
           {
@@ -2133,7 +2158,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -2263,7 +2289,7 @@
             "kind": "OperatorRef",
             "name": "Multiply by Constant",
             "version": "0.1.1",
-            "operatorId": "8f48cb42f676f560e1557b002060b686",
+            "operatorId": "9ae435a534f94192d77959dc1316e3da",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -2303,7 +2329,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -2339,8 +2368,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "5a52c2a2-3f6e-4cb5-9e1f-0dd9b67ac9e3"
-      }
+        "id": "aeb8db68-8d02-4c2c-96de-84300c2505bb"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -2491,7 +2521,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -2621,7 +2652,7 @@
             "kind": "OperatorRef",
             "name": "Log",
             "version": "1.1.3",
-            "operatorId": "8f48cb42f676f560e1557b0020608507",
+            "operatorId": "919067381364235ef1ee290837635988",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -2666,7 +2697,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -2702,8 +2736,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "da669455-6eb8-49c4-add0-051a050b781f"
-      }
+        "id": "1e56df52-e7dd-487e-9d5e-9e5aad910aef"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -2868,7 +2903,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             },
             {
               "kind": "XYAxis",
@@ -2978,7 +3014,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -3058,7 +3095,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -3136,8 +3176,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "a9c56999-33c4-4a48-b512-c160dedbdc48"
-      }
+        "id": "7290b625-41bf-4b0a-85d3-becb51db587c"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -3288,7 +3329,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -3395,7 +3437,7 @@
             "kind": "OperatorRef",
             "name": "Mean and SD",
             "version": "0.1.3",
-            "operatorId": "adcbcb3916b6922ce4af680825124aa0",
+            "operatorId": "9ae435a534f94192d77959dc1316f4a0",
             "operatorKind": "ROperator",
             "propertyValues": [],
             "url": {
@@ -3403,7 +3445,10 @@
               "uri": "https://github.com/tercen/mean_sd_operator"
             }
           },
-          "environment": []
+          "environment": [],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -3439,8 +3484,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "d08a6dc2-5f3a-4adf-919f-5cdb9adb8239"
-      }
+        "id": "1be51f62-29b8-4071-9115-561201ca589e"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -3602,7 +3648,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             },
             {
               "kind": "XYAxis",
@@ -3712,7 +3759,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -3777,7 +3825,7 @@
             "kind": "OperatorRef",
             "name": "Plot",
             "version": "0.0.3",
-            "operatorId": "15578dd9f85df48dce9f5e80bbb1ab84",
+            "operatorId": "9ae435a534f94192d77959dc1317079a",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -3882,7 +3930,10 @@
               "key": "debug",
               "value": "false"
             }
-          ]
+          ],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -3918,8 +3969,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "65629387-b439-4dcc-a53d-47636c54fab5"
-      }
+        "id": "c9702ea9-a471-41c2-8c79-27fcd8357c52"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -4070,7 +4122,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -4135,7 +4188,7 @@
             "kind": "OperatorRef",
             "name": "Mean and SD",
             "version": "0.1.3",
-            "operatorId": "adcbcb3916b6922ce4af680825124aa0",
+            "operatorId": "9ae435a534f94192d77959dc1316f4a0",
             "operatorKind": "ROperator",
             "propertyValues": [],
             "url": {
@@ -4143,7 +4196,10 @@
               "uri": "https://github.com/tercen/mean_sd_operator"
             }
           },
-          "environment": []
+          "environment": [],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -4179,8 +4235,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "eabadd5f-1818-4318-a235-7d00439b6ebf"
-      }
+        "id": "94d2ca00-68ad-424d-b34e-2e833bb56620"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "DataStep",
@@ -4342,7 +4399,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             },
             {
               "kind": "XYAxis",
@@ -4452,7 +4510,8 @@
                   }
                 }
               },
-              "taskId": ""
+              "taskId": "",
+              "preprocessors": []
             }
           ]
         },
@@ -4517,7 +4576,7 @@
             "kind": "OperatorRef",
             "name": "Plot",
             "version": "0.0.3",
-            "operatorId": "15578dd9f85df48dce9f5e80bbb1ab84",
+            "operatorId": "9ae435a534f94192d77959dc1317079a",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -4596,7 +4655,10 @@
               "uri": "https://github.com/tercen/plot_operator"
             }
           },
-          "environment": []
+          "environment": [],
+          "operatorModel": {
+            "kind": "OperatorModel"
+          }
         },
         "rowTable": {
           "kind": "CrosstabTable",
@@ -4632,8 +4694,9 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "e4af9d55-b0f4-4474-a742-082ba6a7816f"
-      }
+        "id": "537f2d2c-24fc-471c-b93f-d30d6c004658"
+      },
+      "parentDataStepId": ""
     },
     {
       "kind": "WizardStep",
@@ -5031,7 +5094,7 @@
   ],
   "offset": {
     "kind": "Point",
-    "x": 227.0,
-    "y": 121.0
+    "x": 291.0,
+    "y": 62.0
   }
 }
